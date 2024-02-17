@@ -56,10 +56,10 @@ actor class DAO() {
     ///////////////
     let members = HashMap.HashMap<Principal, Member>(0, Principal.equal, Principal.hash);
 
-    public shared ({ caller }) func addMember(member : Member) : async Result<(), Text> {
+    public shared ({ caller }) func addMember(newMember : Member) : async Result<(), Text> {
         switch (members.get(caller)) {
             case (null) {
-                members.put(caller, member);
+                members.put(caller, newMember);
                 ledger.put(caller, 100); 
                 return #ok();
             };
