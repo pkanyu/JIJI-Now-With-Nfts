@@ -1,24 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Nft</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Dashboard</title>
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <h1>NFT Dashboard</h1>
+
+    <!-- Initialize NFT System -->
+<div>
+    <h2>Initialize</h2>
+    <input id="custodian" type="text" placeholder="Custodian Principal ID" />
+    <input id="name" type="text" placeholder="NFT Name" />
+    <input id="symbol" type="text" placeholder="NFT Symbol" />
+    <input id="maxLimit" type="number" placeholder="Max Limit" />
+    <input id="logoType" type="text" placeholder="Logo Type" />
+    <input id="logoData" type="text" placeholder="Logo Data" />
+    <button id="initButton">Initialize</button>
+</div>
+
+
+    <!-- Query NFT Balance -->
+    <div>
+        <h2>Query NFT Balance</h2>
+        <input id="userAddress" type="text" placeholder="User Principal ID" />
+        <button id="balanceButton">Get Balance</button>
+        <p id="balanceDisplay"></p>
+    </div>
+
+    <!-- Mint NFT -->
+<div>
+    <h2>Mint NFT</h2>
+    <input id="recipientAddress" type="text" placeholder="Recipient Principal ID" />
+    <input id="metadataImage" type="file" accept="image/*" />
+    <button id="mintButton">Mint NFT</button>
+</div>
+
+
+
+    <!-- Transfer NFT -->
+    <div>
+        <h2>Transfer NFT</h2>
+        <input id="fromAddress" type="text" placeholder="From Principal ID" />
+        <input id="toAddress" type="text" placeholder="To Principal ID" />
+        <input id="tokenId" type="number" placeholder="Token ID" />
+        <button id="transferButton">Transfer NFT</button>
+    </div>
+
+    <!-- Get Owner of NFT -->
+    <div>
+        <h2>Get Owner of NFT</h2>
+        <input id="tokenIdOwner" type="number" placeholder="Token ID" />
+        <button id="ownerButton">Get Owner</button>
+        <p id="ownerDisplay"></p>
+    </div>
+
+    <!-- Get Total Supply of NFTs -->
+    <div>
+        <h2>Get Total Supply of NFTs</h2>
+        <button id="totalSupplyButton">Get Total Supply</button>
+        <p id="totalSupplyDisplay"></p>
+    </div>
+
+    <!-- Get Metadata of Specific NFT -->
+    <div>
+        <h2>Get Metadata of NFT</h2>
+        <input id="tokenIdMetadata" type="number" placeholder="Token ID" />
+        <button id="metadataButton">Get Metadata</button>
+        <p id="metadataDisplay"></p>
+    </div>
+
+    <!-- Get Metadata for User's NFTs -->
+    <div>
+        <h2>Get Metadata for User's NFTs</h2>
+        <input id="userAddressMetadata" type="text" placeholder="User Principal ID" />
+        <button id="userMetadataButton">Get User Metadata</button>
+        <p id="userMetadataDisplay"></p>
+    </div>
+
+    <!-- Get Token IDs for User's NFTs -->
+    <div>
+        <h2>Get Token IDs for User's NFTs</h2>
+        <input id="userAddressTokenIds" type="text" placeholder="User Principal ID" />
+        <button id="userTokenIdsButton">Get User Token IDs</button>
+        <p id="userTokenIdsDisplay"></p>
+    </div>
+
+</body>
 </html>

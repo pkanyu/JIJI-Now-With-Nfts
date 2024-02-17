@@ -4,6 +4,10 @@
       "main": "src/Nft_backend/main.mo",
       "type": "motoko"
     },
+    "Dao":{
+      "main":"src/Nft_backend/Dao.mo",
+      "type":"motoko"
+    },
     "Nft_frontend": {
       "dependencies": [
         "Nft_backend"
