@@ -74,7 +74,7 @@ actor class DAO() {
             case (null) {
                 return #err("Member does not exist");
             };
-            case (?member) {
+            case (?mem) {
                 members.put(caller, member);
                 return #ok();
             };
@@ -86,7 +86,7 @@ actor class DAO() {
             case (null) {
                 return #err("Member does not exist");
             };
-            case (?member) {
+            case (?mem) {
                 members.delete(caller);
                 return #ok();
             };
