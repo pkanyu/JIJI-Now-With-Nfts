@@ -4,89 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Dashboard</title>
-    <script type="module" src="index.js"></script>
+    <script src="main.bundle.js" ></script>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
+
+      <button id="login">Log in</button>
+
+      <!-- Added as a member -->
+<div class="container">
+    <h1>Be Added As a member:</h1>
+    <form id="formsubmission" action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+        <br><br>
+        <button type="submit" id="submitbtn">Submit</button>
+    </form>
     <h1>NFT Dashboard</h1>
-
-    <!-- Initialize NFT System -->
-<div>
-    <h2>Initialize</h2>
-    <input id="custodian" type="text" placeholder="Custodian Principal ID" />
-    <input id="name" type="text" placeholder="NFT Name" />
-    <input id="symbol" type="text" placeholder="NFT Symbol" />
-    <input id="maxLimit" type="number" placeholder="Max Limit" />
-    <input id="logoType" type="text" placeholder="Logo Type" />
-    <input id="logoData" type="text" placeholder="Logo Data" />
-    <button id="initButton">Initialize</button>
-</div>
-
-
-    <!-- Query NFT Balance -->
-    <div>
-        <h2>Query NFT Balance</h2>
-        <input id="userAddress" type="text" placeholder="User Principal ID" />
-        <button id="balanceButton">Get Balance</button>
-        <p id="balanceDisplay"></p>
     </div>
 
-    <!-- Mint NFT -->
+    <!-- Initialize NFT System -->.
+    <div class="container">
 <div>
-    <h2>Mint NFT</h2>
-    <input id="recipientAddress" type="text" placeholder="Recipient Principal ID" />
-    <input id="metadataImage" type="file" accept="image/*" />
-    <button id="mintButton">Mint NFT</button>
+    <h2>Initialize A Collection</h2>
+    <input id="name" type="text" placeholder="NFT Name" />
+    <input id="symbol" type="text" placeholder="NFT Symbol" />
+    <input id="logoType" type="text" placeholder="Logo Type" />
+    <input id="logoData" type="text" placeholder="Logo Data" />
+    <button id="initButton">Initialize Your  Unique Collection</button>
+</div>
 </div>
 
 
 
+    <!-- Mint NFT -->
+<!-- Mint Token Section with MetadataDesc -->
+<div class="container">
+    <h2>Mint Token</h2>
+    <!-- Metadata Description -->
+    <input type="text" id="metadataDesc" placeholder="Description (des_val_data)">
+    <input type="file" id="metadataImage" accept="image/*">
+    <select id="metadataPurpose">
+        <option value="Private">Private</option>
+        <option value="Rendered">Rendered</option>
+    </select>
+    <button id="mintButton">Mint Token</button>
+</div>
+
+
+
+    <div class="container">
     <!-- Transfer NFT -->
     <div>
         <h2>Transfer NFT</h2>
         <input id="fromAddress" type="text" placeholder="From Principal ID" />
         <input id="toAddress" type="text" placeholder="To Principal ID" />
         <input id="tokenId" type="number" placeholder="Token ID" />
+        <input id="amountexpected" type="number" placeholder="Amount Expected" />
         <button id="transferButton">Transfer NFT</button>
     </div>
-
-    <!-- Get Owner of NFT -->
-    <div>
-        <h2>Get Owner of NFT</h2>
-        <input id="tokenIdOwner" type="number" placeholder="Token ID" />
-        <button id="ownerButton">Get Owner</button>
-        <p id="ownerDisplay"></p>
     </div>
 
-    <!-- Get Total Supply of NFTs -->
-    <div>
-        <h2>Get Total Supply of NFTs</h2>
-        <button id="totalSupplyButton">Get Total Supply</button>
-        <p id="totalSupplyDisplay"></p>
+    
+    <div class="container">
+    <!-- Buy an Nft  -->
+    <h2>Buy an Nft</h2>
+     <form id="checkBalance">
+        <input type="text" id="Addressfrom" placeholder="enter your identity">
+        <input type="text" id="Addressto" placeholder="enter your identity">
+        <input type="number" id="expectedAmountToDecrease" placeholder="Amount you want to buy the Nft for">
+        <button type="submit">Buy NFT</button>
+    </form>
     </div>
 
-    <!-- Get Metadata of Specific NFT -->
-    <div>
-        <h2>Get Metadata of NFT</h2>
-        <input id="tokenIdMetadata" type="number" placeholder="Token ID" />
-        <button id="metadataButton">Get Metadata</button>
-        <p id="metadataDisplay"></p>
-    </div>
-
-    <!-- Get Metadata for User's NFTs -->
-    <div>
-        <h2>Get Metadata for User's NFTs</h2>
-        <input id="userAddressMetadata" type="text" placeholder="User Principal ID" />
-        <button id="userMetadataButton">Get User Metadata</button>
-        <p id="userMetadataDisplay"></p>
-    </div>
-
-    <!-- Get Token IDs for User's NFTs -->
-    <div>
-        <h2>Get Token IDs for User's NFTs</h2>
-        <input id="userAddressTokenIds" type="text" placeholder="User Principal ID" />
-        <button id="userTokenIdsButton">Get User Token IDs</button>
-        <p id="userTokenIdsDisplay"></p>
-    </div>
 
 </body>
 </html>

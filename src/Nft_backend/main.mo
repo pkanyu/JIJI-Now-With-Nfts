@@ -273,9 +273,9 @@ public func createAuctionForNFT(nftId: Types.TokenId, duration: Nat) : async Tex
      var init: ?Types.Dip721NonFungibleToken = null;
 
     // Function to initialize the custodian and initConfig
-    public shared({ caller }) func initialize(custodianArg: Principal, initArg: Types.Dip721NonFungibleToken) : async Text {
+    public shared({ caller }) func initialize( initArg: Types.Dip721NonFungibleToken) : async Text {
         if (custodian == null and init == null) {
-            custodian := ?custodianArg;
+            custodian := ?caller;
             init := ?initArg;
             return "Initialized successfully!"
         } else {
@@ -283,7 +283,7 @@ public func createAuctionForNFT(nftId: Types.TokenId, duration: Nat) : async Tex
             return "Already initialized!"
         }
     };
-  let burnTokens:Types.DaoInterface = actor("br5f7-7uaaa-aaaaa-qaaca-cai");
+  let burnTokens:Types.DaoInterface = actor("bkyz2-fmaaa-aaaaa-qaaaq-cai");
 
    // / Define a shared actor class called 'Dip721NFT' that takes a 'Principal' ID as the custodian value and is initialized with the types for the Dip721NonFungibleToken.
 ///This actor class also defines several stable variables.
@@ -332,49 +332,25 @@ func  getCustodians() : List.List<Principal> {
   };
 
   // Define a shared function called 'safeTransferFromDip721' that provides functionality for transferring NFTs and checks if the transfer is from the 'null_address', and errors if it is:
-public shared({ caller }) func safeTransferFromDip721(from: Principal, to: Principal, token_id: Types.TokenId, amount: Nat) : async Types.TxReceipt {  
+  public shared({ caller }) func safeTransferFromDip721(from: Principal, to: Principal, token_id: Types.TokenId) : async Types.TxReceipt {  
     if (to == null_address) {
-        return #Err(#ZeroAddress);
+      return #Err(#ZeroAddress);
     } else {
-        let balanceCheck = await burnTokens.hasBalanceDecreased(to, from, amount);
-        switch(balanceCheck) {
-            case (#Ok(balanceDecreased)) {
-                if (balanceDecreased) {
-                    // Balance has decreased, proceed with the transfer
-                    return await transferFrom(from, to, token_id, caller);
-                } else {
-                    // Balance has not decreased as expected
-                    return #Err(#BuyerHasNotBoughtNft);
-                }
-            };
-            case (#Err(_)) {
-                // Handle the error case
-                return #Err(#Other); // Adjust this based on your error mapping strategy
-            };
-        };
+      return await transferFrom(from, to, token_id, caller);
     };
-};
+  };
 
 
-
-
-
-  func transferFrom(from: Principal, to: Principal, token_id: Types.TokenId, caller: Principal) :async Types.TxReceipt {
+  func transferFrom(from: Principal, to: Principal, token_id: Types.TokenId, caller: Principal) : async Types.TxReceipt {
     let item = List.find(nfts, func(token: Types.Nft) : Bool { token.id == token_id });
     switch (item) {
       case null {
         return #Err(#InvalidTokenId);
       };
       case (?token) {
-        if (
-          caller != token.owner and
-          not List.some(getCustodians(), func (custodian : Principal) : Bool { custodian == caller })
-        ) {
-          return #Err(#Unauthorized);
-        } else if (Principal.notEqual(from, token.owner)) {
+    if (Principal.notEqual(from, token.owner)) {
           return #Err(#Other);
         } else {
-          await burnTokens._burn(caller,1);
           nfts := List.map(nfts, func (item : Types.Nft) : Types.Nft {
             if (item.id == token.id) {
               let update : Types.Nft = {
@@ -501,16 +477,12 @@ public query func symbolDip721() : async Text {
   };
 
   // Define a public function that mints the NFT token:
-  public shared({ caller }) func mintDip721(to: Principal, metadata: Types.MetadataDesc) : async Types.MintReceipt {
-     if (not List.some(getCustodians(), func (c : Principal) : Bool { c == caller })) {
-      Debug.print("Caller: " # debug_show(caller));
+  public shared({ caller }) func mintDip721(metadata: Types.MetadataDesc) : async Types.MintReceipt {
 
-      return #Err(#Unauthorized);
-    };
-    await burnTokens._burn(caller,1);
+    // await burnTokens._burn(caller,1);
     let newId = Nat64.fromNat(List.size(nfts));
     let nft : Types.Nft = {
-      owner = to;
+      owner = caller;
       id = newId;
       metadata = metadata;
     };

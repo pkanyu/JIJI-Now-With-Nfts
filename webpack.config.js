@@ -73,6 +73,8 @@ module.exports = {
           to: ".ic-assets.json5",
           noErrorOnMissing: true,
         },
+        
+
       ],
     }),
   ],

@@ -6,6 +6,7 @@ import Nat64 "mo:base/Nat64";
 import Blob "mo:base/Blob";
 import Principal "mo:base/Principal";
 import Result "mo:base/Result";
+import Error "mo:base/Error";
 
 module {
 
@@ -27,8 +28,8 @@ module {
     #ZeroAddress;
     #Other;
     #AutionNotCreated;
-    #BuyerHasNotBoughtNft
-  };
+    #BuyerHasNotBoughtNft;
+    };
   public type TxReceipt = Result<Nat, ApiError>;
   public type MintReceipt = Result<MintReceiptPart, ApiError>;
 

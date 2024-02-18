@@ -26,7 +26,7 @@ actor class DAO() {
     // PART #1 //
     ///////////////
     let goals = Buffer.Buffer<Text>(0);
-    let name = "Motoko Bootcamp";
+    let name = "JiJi but decentralized";
     var manifesto = "Empower the next generation of builders and make the DAO-revolution a reality";
 
     public shared query func getName() : async Text {
@@ -145,13 +145,15 @@ public func hasBalanceDecreased(user: Principal, to: Principal, expectedDecrease
 
     // Ensure that expectedDecrease is not greater than previousBalance
     if (expectedDecrease > previousBalance) {
-        return #err("Amount you want to transer is more than your balance");
+        return #err("Amount you want to transfer is more than your balance");
     }else{
     let transferResult = await transfer(user, to, expectedDecrease);
     let decreasedAmount = previousBalance - expectedDecrease;
             return #ok( transferResult<= decreasedAmount);
 };
 };
+
+
 
 
 
