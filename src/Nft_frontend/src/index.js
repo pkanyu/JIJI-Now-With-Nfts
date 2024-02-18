@@ -1,5 +1,227 @@
 import { Nft_backend } from "../../declarations/Nft_backend";
+import { Dao } from "../../declarations/Dao";
 import { Principal } from "@dfinity/principal";
+document.querySelector("#formsubmission").addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const name = document.getElementById("name").value;
+  const age = parseInt(document.getElementById("age").value)
+  const Member = {
+    name,
+    age
+  }
+  console.log(Member)
+  try {
+    await Dao.addMember(Member)
+    console.log("sucessfully submitted")
+  } catch (error) {
+    console.log("error", error)
+  }
+})
+
+
+
+//updating member function
+document.querySelector("#updateForm").addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const name = document.getElementById("newname").value;
+  const age = parseInt(document.getElementById("newage").value)
+  const Member = {
+    name,
+    age
+  }
+  console.log(Member)
+  try {
+    await Dao.updateMember(Member)
+    console.log("sucessfully submitted")
+  } catch (error) {
+    console.log("error", error)
+  }
+})
+
+
+const deleteButton = document.getElementById("deleteBtn")
+deleteButton.addEventListener('click', async function () {
+  await Dao.removeMember();
+  console.log("user successfully removed")
+})
+
+
+const checkprofile = document.getElementById("identity");
+checkprofile.addEventListener('submit', async function (event) {
+  event.preventDefault()
+  const user = document.getElementById("principal").value;
+  const pricipal = Principal.fromText(user);
+  try {
+    const result = await Dao.getMember(pricipal);
+    console.log(result)
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+//get allusers
+async function allUsers() {
+  const users = await Dao.getAllMembers()
+  return console.log(users);
+}
+
+allUsers()
+
+//part for the Dao code
+
+const minting = document.getElementById("minting");
+minting.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const usermintingprincipal = document.getElementById("mintingprincipal").value;
+  const mintingAmount = parseInt(document.getElementById("amount").value);
+  const principal = Principal.fromText(usermintingprincipal)
+  try {
+    await Dao.mint(principal, mintingAmount)
+    console.log("successfully minted")
+
+  }
+  catch (error) {
+    console.log("error", error);
+  }
+})
+
+
+
+const burn = document.getElementById("burn")
+burn.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const usermintingprincipal = document.getElementById("burnprincipal").value;
+  const ownerAmount = parseInt(document.getElementById("owneramount").value);
+  const principal = Principal.fromText(usermintingprincipal)
+  try {
+    const result = await Dao.burn(principal, ownerAmount)
+    console.log(result)
+  }
+  catch (error) {
+    console.log("error", error);
+  }
+})
+
+
+
+//loading the user balance
+
+
+const hasBalanceDecreased = document.getElementById("checkBalance")
+
+hasBalanceDecreased.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const checkbalanceprincipal = document.getElementById("balanceprincipal").value;
+  const ownerAmount = parseInt(document.getElementById("expectedAmountToDecrease").value);
+  const principal = Principal.fromText(checkbalanceprincipal)
+  try {
+    const result = await Dao.hasBalanceDecreased(principal, principal, ownerAmount)
+    console.log(result)
+  }
+  catch (error) {
+    console.log("error", error);
+  }
+})
+
+const transfer = document.getElementById("transfer");
+transfer.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const checkbalanceprincipal = document.getElementById("transferprincipal").value;
+  const amountTransfer = parseInt(document.getElementById("AmountToTransfer").value);
+  const principal = Principal.fromText(checkbalanceprincipal)
+  try {
+    const result = await Dao.transfer(principal, principal, amountTransfer)
+    console.log(result)
+  }
+  catch (error) {
+    console.log("error", error);
+  }
+})
+
+
+//const query user balace
+
+const askforbalance = document.getElementById("checkuserbalance")
+
+askforbalance.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  const userPrincipal = document.getElementById("checkbalanceprincipal").value;
+  const principalforbalance = Principal.fromText(userPrincipal);
+  try {
+    const result = await Dao.balanceOf(principalforbalance)
+    console.log(result)
+  }
+  catch (error) {
+    console.log("error", error);
+  }
+})
+
+
+async function airdrop() {
+  const result = await Dao.airdrop()
+  return console.log(result)
+}
+
+airdrop()
+
+
+
+//part44
+const ismember = document.getElementById("ismember")
+
+
+ismember.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  try {
+    const principal = document.getElemenBy("memberprincipal").value;
+    const principalId = Principal.fromText(principal);
+    const result = await Dao._isMember(principalId);
+    return result; // Either true or false
+  } catch (error) {
+    console.error("Error checking membership:", error);
+    // Handle error gracefully (e.g., display error message to user)
+    return undefined; // Or default value if appropriate
+  }
+})
+const isBurn = document.getElementById("isBurn")
+isBurn.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  try {
+    const principal = document.getElemenBy("isbunprincipal").value;
+    const principalId = Principal.fromText(principal);
+    const result = await Dao._burn(principalId);
+    return result; // Either true or false
+  } catch (error) {
+    console.error("Error checking membership:", error);
+    // Handle error gracefully (e.g., display error message to user)
+    return undefined; // Or default value if appropriate
+  }
+})
+
+
+const submitProposal = document.getElementById("submitProposalForm");
+
+submitProposal.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  try {
+    const proposal = document.getElementById("propasalCategory").value;
+    await Dao.shared(proposal)
+    console.log("succesfully submitted your proposal")
+  } catch (error) {
+    console.error("error checking propasol", error)
+  }
+})
+
+
+const voteproposalSubmission = document.getElementById("voteProp")
+
+
+
+
+
+
+
 
 
 // Initialize the NFT backend with custodian and initial configuration
@@ -44,44 +266,44 @@ document.getElementById("balanceButton").addEventListener("click", async () => {
 
 // Mint a new NFT
 document.getElementById("mintButton").addEventListener("click", async () => {
-    const recipientText = document.getElementById("recipientAddress").value;
-    const metadataFileInput = document.getElementById("metadataImage");
+  const recipientText = document.getElementById("recipientAddress").value;
+  const metadataFileInput = document.getElementById("metadataImage");
 
-    if (metadataFileInput.files.length === 0) {
-        alert("Please select an image file to mint.");
-        return;
+  if (metadataFileInput.files.length === 0) {
+    alert("Please select an image file to mint.");
+    return;
+  }
+
+  const imageFile = metadataFileInput.files[0];
+  const reader = new FileReader();
+
+  reader.onloadend = async function () {
+    try {
+      const recipient = Principal.fromText(recipientText);
+      const arrayBuffer = reader.result;
+      const metadataBlob = new Uint8Array(arrayBuffer);
+
+      const receipt = await Nft_backend.mintDip721(recipient, metadataBlob);
+      console.log(receipt);
+
+      // Handle the receipt response here
+      if (receipt.Ok) {
+        alert("Minting successful! Transaction ID: " + receipt.Ok.id);
+      } else {
+        alert("Minting failed: " + JSON.stringify(receipt.Err));
+      }
+    } catch (error) {
+      console.error("Error during minting:", error);
+      alert("Minting error: " + error.message);
     }
+  };
 
-    const imageFile = metadataFileInput.files[0];
-    const reader = new FileReader();
+  reader.onerror = function (error) {
+    console.error("Error reading file:", error);
+    alert("Error reading file: " + error.message);
+  };
 
-    reader.onloadend = async function() {
-        try {
-            const recipient = Principal.fromText(recipientText);
-            const arrayBuffer = reader.result;
-            const metadataBlob = new Uint8Array(arrayBuffer);
-
-            const receipt = await Nft_backend.mintDip721(recipient, metadataBlob);
-            console.log(receipt);
-
-            // Handle the receipt response here
-            if (receipt.Ok) {
-                alert("Minting successful! Transaction ID: " + receipt.Ok.id);
-            } else {
-                alert("Minting failed: " + JSON.stringify(receipt.Err));
-            }
-        } catch (error) {
-            console.error("Error during minting:", error);
-            alert("Minting error: " + error.message);
-        }
-    };
-
-    reader.onerror = function(error) {
-        console.error("Error reading file:", error);
-        alert("Error reading file: " + error.message);
-    };
-
-    reader.readAsArrayBuffer(imageFile);
+  reader.readAsArrayBuffer(imageFile);
 });
 
 
@@ -123,23 +345,23 @@ document
       "metadataDisplay"
     ).innerText = `Metadata: ${JSON.stringify(metadata)}`;
   });
-  document
-    .getElementById("userMetadataButton")
-    .addEventListener("click", async () => {
-      const user = document.getElementById("userAddressMetadata").value;
-      const metadata = await Nft_backend.getMetadataForUserDip721(user);
-      document.getElementById(
-        "userMetadataDisplay"
-      ).innerText = `User Metadata: ${JSON.stringify(metadata)}`;
-    });
+document
+  .getElementById("userMetadataButton")
+  .addEventListener("click", async () => {
+    const user = document.getElementById("userAddressMetadata").value;
+    const metadata = await Nft_backend.getMetadataForUserDip721(user);
+    document.getElementById(
+      "userMetadataDisplay"
+    ).innerText = `User Metadata: ${JSON.stringify(metadata)}`;
+  });
 
-  // Get token IDs for a user's NFTs
-  document
-    .getElementById("userTokenIdsButton")
-    .addEventListener("click", async () => {
-      const user = document.getElementById("userAddressTokenIds").value;
-      const tokenIds = await Nft_backend.getTokenIdsForUserDip721(user);
-      document.getElementById(
-        "userTokenIdsDisplay"
-      ).innerText = `User Token IDs: ${tokenIds.join(", ")}`;
-    });
+// Get token IDs for a user's NFTs
+document
+  .getElementById("userTokenIdsButton")
+  .addEventListener("click", async () => {
+    const user = document.getElementById("userAddressTokenIds").value;
+    const tokenIds = await Nft_backend.getTokenIdsForUserDip721(user);
+    document.getElementById(
+      "userTokenIdsDisplay"
+    ).innerText = `User Token IDs: ${tokenIds.join(", ")}`;
+  });
