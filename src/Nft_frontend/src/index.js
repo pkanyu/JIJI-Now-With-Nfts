@@ -66,7 +66,7 @@ async function allUsers() {
   return console.log(users);
 }
 
-allUsers()
+//allUsers()
 
 //part for the Dao code
 
@@ -163,7 +163,7 @@ async function airdrop() {
   return console.log(result)
 }
 
-airdrop()
+//airdrop()
 
 
 
@@ -205,7 +205,7 @@ const submitProposal = document.getElementById("submitProposalForm");
 submitProposal.addEventListener("submit", async function (e) {
   e.preventDefault();
   try {
-    const proposal = document.getElementById("propasalCategory").value;
+    const proposal = document.getElementById("proposalCategory").value;
     await Dao.shared(proposal)
     console.log("succesfully submitted your proposal")
   } catch (error) {
@@ -214,9 +214,60 @@ submitProposal.addEventListener("submit", async function (e) {
 })
 
 
+//voting function
+const submitVote = document.getElementById("votingform")
+
+submitVote.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  const token = document.getElementById("verifyToken").value;
+  const answer = document.getElementById("voteCategory").value;
+
+  try {
+    const tokenId = BigInt(token);
+    await Dao.voteProposal(tokenId, answer);
+    console.log("successfully voted")
+  }
+  catch (error) {
+    console.log("error", error)
+  }
+})
+
+const getProposal = document.getElementById("getpropasal");
+
+getProposal.addEventListener("click", async function (e) {
+  e.preventDefault()
+  try {
+    const result = await Dao.getAllProposals();
+    document.getElementById("proposal").innerText = result;
+  }
+  catch (error) {
+    console.log("error", error)
+  }
+})
+
+
 const voteproposalSubmission = document.getElementById("voteProp")
 
+//nft creating new auction
 
+const getAuction = document.getElementById("getAuction");
+
+getAuction.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  try {
+    const token = document.getElementById("auction_token").value;
+    const duration = parseInt(document.getElementById("auction_duration").value);
+    const tokenId = BigInt(token)
+    const auctionItem = await Nft_backend.createAuctionForNFT(tokenId, duration);
+    document.getElementById("auctionedItem").innerText = auctionItem;
+  }
+  catch (error) {
+    console.log(error)
+  }
+})
+
+
+const makeAuction = document.getElementById(); ml
 
 const userSubmission = document.getElementById("userbalanceSubmission");
 userSubmission.addEventListener("submit", async function (event) {

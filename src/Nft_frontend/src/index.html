@@ -86,13 +86,31 @@
             <option value="community">Community</option>
         </select>
         <br><br>
-        <label for="proposalTitle">Proposal Title:</label>
-        <input type="text" id="proposalTitle" name="title" required>
         <br><br>
         <button type="submit">Submit Proposal</button>
     </form>
+
+    <h5>Get proposal</h5>
+    <div>
+        <button id="getproposal">getproposal</button>
+        <p id="proposal"></p>
+    </div>
+
+    <h1>vote</h1>
+
+    <form id="votingform">
+        <input type="number" id="voterToken" placeholder="enter your token"></input>
+        <select id="proposalCategory" name="category">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select>
+        <button type="submit">Vote</button>
+    </form>
     <h1>NFT Dashboard</h1>
 
+    <!-- check available proposal -->
+
+    <h2></h2>
     <!-- Initialize NFT System -->
     <div>
         <h2>Initialize</h2>
@@ -181,6 +199,26 @@
         <input id="userAddressTokenIds" type="text" placeholder="User Principal ID" />
         <button id="userTokenIdsButton">Get User Token IDs</button>
         <p id="userTokenIdsDisplay"></p>
+    </div>
+
+    <div>
+        <h2>getAuction Detail</h2>
+
+        <form id="getAuction">
+            <input id="AuctionId" type="number" placeholder="enter action id"></input>
+            <button type="submit">check</button>
+        </form>
+        <p id="auctionedItem"></p>
+    </div>
+
+    <div>
+        <h2>new nft auction</h2>
+
+        <form id="makinganauction">
+            <input type="number" id="auction_token" placeholder="enter item"></input>
+            <input type="number" id="auction_duration" placeholder="enter your duration"></input>
+            <button type="submit">make auction</button>
+        </form>
     </div>
 </body>
 
