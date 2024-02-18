@@ -1,62 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFT Dashboard</title>
-    <script type="module" src="index.js"></script>
+    <title>Basic Form</title>
 </head>
+
 <body>
+    <h1>Enter your information:</h1>
+    <form id="formsubmission" action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+        <br><br>
+        <button type="submit" id="submitbtn">Submit</button>
+    </form>
+
+
+    <form id="updateForm" action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="newname" name="newname" placeholder="Enter your name" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="newage" name="newage" placeholder="Enter your age" required>
+        <br><br>
+        <button type="submit">update</button>
+    </form>
+
+
+    <button type="button" id="deleteBtn">Delete</button>
+    <br>
+
+    <form id="identity">
+        <input type="text" id="principal" placeholder="enter your identity">
+        <button type="submit">submitid</button>
+    </form>
+    <br>
+    <form id="minting">
+        <input type="text" id="mintingprincipal" placeholder="enter your identity">
+        <input type="number" id="amount" placeholder="enter your identity">
+        <button type="submit">submitid</button>
+    </form>
+    <br>
+    <form id="burn">
+        <input type="text" id="burnprincipal" placeholder="enter your identity">
+        <input type="number" id="owneramount" placeholder="enter your identity">
+        <button type="submit">burn</button>
+    </form>
+    <br>
+    <form id="checkBalance">
+        <input type="text" id="balanceprincipal" placeholder="enter your identity">
+        <input type="number" id="expectedAmountToDecrease" placeholder="enter your identity">
+        <button type="submit">check balance</button>
+    </form>
+
+    <br>
+    <form id="transfer">
+        <input type="text" id="transferprincipal" placeholder="enter your identity">
+        <input type="number" id="AmountToTransfer" placeholder="enter your identity">
+        <button type="submit">check balance</button>
+    </form>
+
+    <form id="checkuserbalance">
+        <input type="text" id="checkbalanceprincipal" placeholder="enter your identity">
+        <button type="submit">check user balance</button>
+    </form>
+    <form id="ismember">
+        <input type="text" id="checkbalanceprincipal" placeholder="enter your identity">
+    </form>
+
+    <form id="isBurn">
+        <input type="text" id="checkbalanceprincipal" placeholder="enter your identity">
+    </form>
+
+
+    <br>
+    <h1>Submit Your Proposal</h1>
+    <form id="submitProposalForm">
+        <select id="proposalCategory" name="category">
+            <option value="governance">Governance</option>
+            <option value="development">Development</option>
+            <option value="community">Community</option>
+        </select>
+        <br><br>
+        <br><br>
+        <button type="submit">Submit Proposal</button>
+    </form>
+
+    <h5>Get proposal</h5>
+    <div>
+        <button id="getproposal">getproposal</button>
+        <p id="proposal"></p>
+    </div>
+
+    <h1>vote</h1>
+
+    <form id="votingform">
+        <input type="number" id="voterToken" placeholder="enter your token"></input>
+        <select id="proposalCategory" name="category">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select>
+        <button type="submit">Vote</button>
+    </form>
     <h1>NFT Dashboard</h1>
 
+    <!-- check available proposal -->
+
+    <h2></h2>
     <!-- Initialize NFT System -->
-<div>
-    <h2>Initialize</h2>
-    <input id="custodian" type="text" placeholder="Custodian Principal ID" />
-    <input id="name" type="text" placeholder="NFT Name" />
-    <input id="symbol" type="text" placeholder="NFT Symbol" />
-    <input id="maxLimit" type="number" placeholder="Max Limit" />
-    <input id="logoType" type="text" placeholder="Logo Type" />
-    <input id="logoData" type="text" placeholder="Logo Data" />
-    <button id="initButton">Initialize</button>
-</div>
+    <div>
+        <h2>Initialize</h2>
+        <input id="custodian" type="text" placeholder="Custodian Principal ID" />
+        <input id="name" type="text" placeholder="NFT Name" />
+        <input id="symbol" type="text" placeholder="NFT Symbol" />
+        <input id="maxLimit" type="number" placeholder="Max Limit" />
+        <input id="logoType" type="text" placeholder="Logo Type" />
+        <input id="logoData" type="text" placeholder="Logo Data" />
+        <button id="initButton">Initialize</button>
+    </div>
 
 
     <!-- Query NFT Balance -->
     <div>
         <h2>Query NFT Balance</h2>
-        <input id="userAddress" type="text" placeholder="User Principal ID" />
-        <button id="balanceButton">Get Balance</button>
-        <p id="balanceDisplay"></p>
+        <form action="#" id="balanceQuery">
+            <input type="text" id="userprincipal" placeholder="enter your identity">
+            <button type="submit">CheckBalance</button>
+        </form>
     </div>
 
     <!-- Mint NFT -->
-<div>
-    <h2>Mint NFT</h2>
-    <input id="recipientAddress" type="text" placeholder="Recipient Principal ID" />
-    <input id="metadataImage" type="file" accept="image/*" />
-    <button id="mintButton">Mint NFT</button>
-</div>
+    <div>
+        <h2>Mint NFT</h2>
+        <form action="#">
+            <input id="recipientAddress" type="text" placeholder="Recipient Principal ID" />
+            <input type="text" id="mintAmountInput" name="amount" size=50 required>
+            <input id="metadataImage" type="file" accept="image/*" />
+            <select id="proposalCategory" name="category">
+                <option value="governance">Private</option>
+                <option value="development">Rendered</option>
+            </select>
+            <button id="mintButton">Mint NFT</button>
+        </form>
+    </div>
 
 
 
     <!-- Transfer NFT -->
     <div>
         <h2>Transfer NFT</h2>
-        <input id="fromAddress" type="text" placeholder="From Principal ID" />
-        <input id="toAddress" type="text" placeholder="To Principal ID" />
-        <input id="tokenId" type="number" placeholder="Token ID" />
-        <button id="transferButton">Transfer NFT</button>
+        <form id="transferprocess">
+            <input id="fromAddress" type="text" placeholder="From Principal ID" />
+            <input id="toAddress" type="text" placeholder="To Principal ID" />
+            <input id="tokenId" type="number" placeholder="Token ID" />
+            <input id="amount" type="number" placeholder="enter amount to tranfer" />
+            <button id="transferButton">Transfer NFT</button>
+        </form>
     </div>
 
     <!-- Get Owner of NFT -->
-    <div>
-        <h2>Get Owner of NFT</h2>
-        <input id="tokenIdOwner" type="number" placeholder="Token ID" />
-        <button id="ownerButton">Get Owner</button>
-        <p id="ownerDisplay"></p>
-    </div>
-
+    <h2>owner NFT</h2>
+    <form id="userbalanceSubmission" action="#">
+        <label for="tokenSubmitted">identity:</label>
+        <input type="number" id="tokenSubmitted" name="tokenSubmitted" placeholder="Enter your age" required>
+        <br><br>
+        <button type="submit" id="submitbtn">Submit</button>
+    </form>
     <!-- Get Total Supply of NFTs -->
     <div>
         <h2>Get Total Supply of NFTs</h2>
@@ -67,7 +180,7 @@
     <!-- Get Metadata of Specific NFT -->
     <div>
         <h2>Get Metadata of NFT</h2>
-        <input id="tokenIdMetadata" type="number" placeholder="Token ID" />
+        <input id="tokenIdMetadata" type="text" placeholder="Token ID" />
         <button id="metadataButton">Get Metadata</button>
         <p id="metadataDisplay"></p>
     </div>
@@ -88,5 +201,26 @@
         <p id="userTokenIdsDisplay"></p>
     </div>
 
+    <div>
+        <h2>getAuction Detail</h2>
+
+        <form id="getAuction">
+            <input id="AuctionId" type="number" placeholder="enter action id"></input>
+            <button type="submit">check</button>
+        </form>
+        <p id="auctionedItem"></p>
+    </div>
+
+    <div>
+        <h2>new nft auction</h2>
+
+        <form id="makinganauction">
+            <input type="number" id="auction_token" placeholder="enter item"></input>
+            <input type="number" id="auction_duration" placeholder="enter your duration"></input>
+            <button type="submit">make auction</button>
+        </form>
+    </div>
 </body>
+
+
 </html>
