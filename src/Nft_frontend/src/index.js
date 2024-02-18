@@ -218,7 +218,22 @@ const voteproposalSubmission = document.getElementById("voteProp")
 
 
 
-
+const userSubmission = document.getElementById("userbalanceSubmission");
+userSubmission.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  try {
+    const token = document.getElementById("tokenSubmitted").value;
+    console.log("token submitted", token)
+    const tokenId = BigInt(token)
+    console.log("token id", tokenId)
+    await Nft_backend.ownerOfDip721(tokenId);
+    console.log("success fully submitted")
+    document.getElementById("ownerDisplay").innerText = `Owner: ${owner}`;
+  }
+  catch (error) {
+    console.log("error", error)
+  }
+})
 
 
 
@@ -319,12 +334,23 @@ document
   });
 
 // Get the owner of a specific NFT
-document.getElementById("ownerButton").addEventListener("click", async () => {
-  const tokenId = document.getElementById("tokenId").value;
-  const owner = await Nft_backend.ownerOfDip721(tokenId);
-  document.getElementById("ownerDisplay").innerText = `Owner: ${owner}`;
-});
+// document.getElementById("ownerButton").addEventListener("click", async () => {
+//   const tokenId = document.getElementById("tokenId").value;
+//   console.log(tokenId);
+//   // const owner = await Nft_backend.ownerOfDip721(tokenId);
+//   // document.getElementById("ownerDisplay").innerText = `Owner: ${owner}`;
+// });
+// const getOwner = document.getElementById("ownerToken");
 
+// getOwner.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   try {
+//     const tokenId = document.getElementById("tokenId").value;
+//     console.log(tokenId)
+//   } catch (error) {
+//     console.log(error)
+//   }
+// })
 // Additional functionalities (e.g., getTotalSupply, getMetadataOfNFT) can be added similarly.
 document
   .getElementById("totalSupplyButton")
