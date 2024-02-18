@@ -124,7 +124,7 @@ hasBalanceDecreased.addEventListener("submit", async function (event) {
   }
 })
 
-const transfer = document.getElementById("transfer");
+const transfer = document.getElementById("transferprocess");
 transfer.addEventListener("submit", async function (event) {
   event.preventDefault()
   const checkbalanceprincipal = document.getElementById("transferprincipal").value;
@@ -226,7 +226,7 @@ userSubmission.addEventListener("submit", async function (event) {
     console.log("token submitted", token)
     const tokenId = BigInt(token)
     console.log("token id", tokenId)
-    await Nft_backend.ownerOfDip721(tokenId);
+    const owner = await Nft_backend.ownerOfDip721(tokenId);
     console.log("success fully submitted")
     document.getElementById("ownerDisplay").innerText = `Owner: ${owner}`;
   }
@@ -273,11 +273,20 @@ document.getElementById("initButton").addEventListener("click", async () => {
 
 
 // Get the balance of NFTs for a specific user
-document.getElementById("balanceButton").addEventListener("click", async () => {
-  const user = document.getElementById("userAddress").value;
-  const balance = await Nft_backend.balanceOfDip721(user);
-  document.getElementById("balanceDisplay").innerText = `Balance: ${balance}`;
-});
+
+const balanceQuery = document.getElementById("balanceQuery");
+
+balanceQuery.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  try {
+    const userPrincipal = document.getElementById("userprincipal").value;
+    const principal = Principal.fromText(userPrincipal);
+    const balance = await Nft_backend.balanceOfDip721(principal);
+    console.log(balance);
+  } catch (error) {
+    console.log("error", error)
+  }
+})
 
 // Mint a new NFT
 document.getElementById("mintButton").addEventListener("click", async () => {
@@ -323,34 +332,27 @@ document.getElementById("mintButton").addEventListener("click", async () => {
 
 
 // Transfer an NFT
-document
-  .getElementById("transferButton")
-  .addEventListener("click", async () => {
-    const from = document.getElementById("fromAddress").value;
-    const to = document.getElementById("toAddress").value;
-    const tokenId = document.getElementById("tokenId").value;
-    const receipt = await Nft_backend.transferFromDip721(from, to, tokenId);
-    console.log(receipt);
-  });
 
-// Get the owner of a specific NFT
-// document.getElementById("ownerButton").addEventListener("click", async () => {
-//   const tokenId = document.getElementById("tokenId").value;
-//   console.log(tokenId);
-//   // const owner = await Nft_backend.ownerOfDip721(tokenId);
-//   // document.getElementById("ownerDisplay").innerText = `Owner: ${owner}`;
-// });
-// const getOwner = document.getElementById("ownerToken");
+const tranferNft = document.getElementById("transferprocess");
 
-// getOwner.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   try {
-//     const tokenId = document.getElementById("tokenId").value;
-//     console.log(tokenId)
-//   } catch (error) {
-//     console.log(error)
-//   }
-// })
+tranferNft.addEventListener("submit", async function (event) {
+  event.preventDefault()
+  const principalID = document.getElementById("fromAddress").value;
+  const receiverPrincipalID = document.getElementById("toAddress").value;
+  const tokenId = document.getElementById("tokenId").value;
+  const amount = document.getElementById("amount").value;
+  try {
+    const senderPrincipalId = Principal.fromText(principalID);
+    const receiverPrincipalId = Principal.fromText(receiverPrincipalID)
+    const senderTokenId = BigInt(tokenId);
+    console.log(senderTokenId)
+    await Nft_backend.safeTransferFromDip721(senderPrincipalId, receiverPrincipalId, senderTokenId, amount)
+    console.log("success fully submitted")
+  } catch (error) {
+    console.log("tranfer error", error)
+  }
+})
+
 // Additional functionalities (e.g., getTotalSupply, getMetadataOfNFT) can be added similarly.
 document
   .getElementById("totalSupplyButton")
@@ -365,7 +367,9 @@ document
 document
   .getElementById("metadataButton")
   .addEventListener("click", async () => {
-    const tokenId = document.getElementById("tokenIdMetadata").value;
+    const token = document.getElementById("tokenIdMetadata").value;
+    const tokenId = BigInt(token)
+    console.log(tokenId)
     const metadata = await Nft_backend.getMetadataDip721(tokenId);
     document.getElementById(
       "metadataDisplay"

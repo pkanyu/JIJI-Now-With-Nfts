@@ -109,9 +109,10 @@
     <!-- Query NFT Balance -->
     <div>
         <h2>Query NFT Balance</h2>
-        <input id="userAddress" type="text" placeholder="User Principal ID" />
-        <button id="balanceButton">Get Balance</button>
-        <p id="balanceDisplay"></p>
+        <form action="#" id="balanceQuery">
+            <input type="text" id="userprincipal" placeholder="enter your identity">
+            <button type="submit">CheckBalance</button>
+        </form>
     </div>
 
     <!-- Mint NFT -->
@@ -134,10 +135,13 @@
     <!-- Transfer NFT -->
     <div>
         <h2>Transfer NFT</h2>
-        <input id="fromAddress" type="text" placeholder="From Principal ID" />
-        <input id="toAddress" type="text" placeholder="To Principal ID" />
-        <input id="tokenId" type="number" placeholder="Token ID" />
-        <button id="transferButton">Transfer NFT</button>
+        <form id="transferprocess">
+            <input id="fromAddress" type="text" placeholder="From Principal ID" />
+            <input id="toAddress" type="text" placeholder="To Principal ID" />
+            <input id="tokenId" type="number" placeholder="Token ID" />
+            <input id="amount" type="number" placeholder="enter amount to tranfer" />
+            <button id="transferButton">Transfer NFT</button>
+        </form>
     </div>
 
     <!-- Get Owner of NFT -->
