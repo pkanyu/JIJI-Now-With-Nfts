@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex flex-col">
+        <div
+          class="pt-6 pr-20 pb-12 pl-6 w-full rounded-2xl bg-neutral-800 max-md:px-5 max-md:max-w-full"
+        >
+          <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <div class="flex flex-col max-md:mt-10 max-md:max-w-full">
+                <img
+                  loading="lazy"
+                  srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/dacd66b259612d63718ea3c83960d08d869ea14a0b5cecdf1c012a87c4bc9b7b?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                  class="w-full aspect-[0.99] max-md:max-w-full"
+                />
+                <div
+                  class="flex gap-5 justify-between mt-4 w-full max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div class="flex-auto text-3xl font-bold text-white">#2201</div>
+                  <div class="flex gap-4 my-auto">
+                    <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5f4bbf90dd3a95da73840aed379805233a639c8a0d82d91fb18a5daf1a4dfadc?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-8 aspect-square"
+                    />
+                    <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5998bd1b4b71cae124e1f7952fc0da11eb870b5d1b546a410a7f16b283d38019?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-8 aspect-square"
+                    />
+                    <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/92399b84c07a12627bc996c58679496812b99a0ec47cb06edd612ae65d00c637?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-8 aspect-square"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+              <div class="flex flex-col max-md:mt-10 max-md:max-w-full">
+                <div
+                  class="flex gap-5 justify-between px-4 py-2 w-full rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex gap-4 justify-between text-xl font-medium leading-8 text-white whitespace-nowrap"
+                  >
+                    <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/7b27999510477fc2a28cef2910f839b810323ae9c73d026e390b14ac54f9858a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-12 aspect-square"
+                    />
+                    <div class="grow my-auto">Jiji Frames</div>
+                  </div>
+                  <div class="flex flex-col justify-center py-1 my-auto aspect-[1.8]">
+                    <div
+                      class="flex flex-col justify-center pl-4 bg-red-400 aspect-[2.57] rounded-[360px]"
+                    >
+                      <div class="z-10 shrink-0 h-5 bg-red-500 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-2 justify-between mt-2 font-medium whitespace-nowrap leading-[150%] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Type</div>
+                    <div class="mt-1 text-base text-white">Y0K-A1</div>
+                  </div>
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Background</div>
+                    <div class="mt-1 text-base text-white">Jasper</div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-2 justify-between mt-2 font-medium whitespace-nowrap leading-[150%] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Body</div>
+                    <div class="mt-1 text-base text-white">Jasper</div>
+                  </div>
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Eyes</div>
+                    <div class="mt-1 text-base text-white">Eye Shadow (Jasper)</div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-2 justify-between mt-2 font-medium whitespace-nowrap leading-[150%] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Mouth</div>
+                    <div class="mt-1 text-base text-white">Frown</div>
+                  </div>
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Wear</div>
+                    <div class="mt-1 text-base text-white">
+                      Track Jacket (Obsidian)
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-2 justify-between mt-2 font-medium whitespace-nowrap leading-[150%] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Hair</div>
+                    <div class="mt-1 text-base text-white">Bob (Obsidian)</div>
+                  </div>
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Face</div>
+                    <div class="mt-1 text-base text-white">PR Mask (Citrine)</div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-2 justify-between mt-2 font-medium whitespace-nowrap leading-[150%] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Head</div>
+                    <div class="mt-1 text-base text-white">Void</div>
+                  </div>
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Extra</div>
+                    <div class="mt-1 text-base text-white">Void</div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-2 justify-between mt-2 font-medium whitespace-nowrap leading-[150%] max-md:flex-wrap max-md:max-w-full"
+                >
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Style</div>
+                    <div class="mt-1 text-base text-white">4</div>
+                  </div>
+                  <div
+                    class="flex flex-col flex-1 items-start py-2 pr-20 pl-4 rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:pr-5"
+                  >
+                    <div class="text-sm text-white text-opacity-80">Strength</div>
+                    <div class="mt-1 text-base text-white">5</div>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-3 justify-between py-2 pr-20 pl-4 mt-2 font-medium whitespace-nowrap rounded-lg border border-solid border-[color:var(--grey-div-box,#343434)] max-md:flex-wrap max-md:pr-5 max-md:max-w-full"
+                >
+                  <div class="flex flex-col flex-1 my-auto leading-[150%]">
+                    <div class="text-sm text-white text-opacity-80">Spirit</div>
+                    <div class="mt-1 text-base text-white">4</div>
+                  </div>
+                  <div
+                    class="grow justify-center px-8 py-4 text-xl leading-6 text-white bg-red-500 bg-opacity-30 rounded-[61px] max-md:px-5"
+                  >
+                    MINT
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center px-16 py-9 w-full bg-zinc-800 max-md:px-5 max-md:max-w-full"
+        >
+          <div class="w-full max-w-[1050px] max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+              <div class="flex flex-col w-[69%] max-md:ml-0 max-md:w-full">
+                <div
+                  class="flex flex-col grow text-2xl font-semibold leading-9 text-white max-md:mt-10 max-md:max-w-full"
+                >
+                  <div
+                    class="text-5xl capitalize leading-[56.1px] max-md:max-w-full max-md:text-4xl"
+                  >
+                    The Grandpa Apes
+                  </div>
+                  <div class="mt-2.5 capitalize text-zinc-500 max-md:max-w-full">
+                    Minted on Feb 14, 2024
+                  </div>
+                  <div
+                    class="mt-8 font-bold capitalize text-zinc-500 max-md:max-w-full"
+                  >
+                    Created By
+                  </div>
+                  <div
+                    class="flex gap-3 justify-between mt-2.5 text-white capitalize whitespace-nowrap rounded-3xl leading-[140%] max-md:flex-wrap max-md:max-w-full"
+                  >
+                    <img
+                      loading="lazy"
+                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/62f19e4f1d9bec847a55e0374e9639084dba4d513d6e10650f5b2ec3cf2fe91c?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="my-auto w-6 aspect-square"
+                    />
+                    <div class="grow max-md:max-w-full">Orbitian</div>
+                  </div>
+                  <div
+                    class="mt-8 font-bold capitalize text-zinc-500 max-md:max-w-full"
+                  >
+                    Description
+                  </div>
+                  <div class="mt-2.5 leading-9 max-md:max-w-full">
+                    &quot;Grandpa Apes&quot; NFTs are a delightful collection of
+                    digital artworks that pay homage to the wisdom, charm, and
+                    character of elder primates. Each Grandpa Ape NFT features a
+                    unique and endearing depiction of a wise old ape, adorned with
+                    distinguished features, expressive eyes, and a lifetime of stories
+                    etched into every pixel. These NFTs celebrate the beauty of aging
+                    and the richness of experience, capturing the essence of a
+                    generation that has witnessed the passage of time and the
+                    evolution of their surroundings. From the gentle wrinkles of their
+                    faces to the twinkle in their eyes, each Grandpa Ape NFT tells a
+                    story of resilience, wisdom, and the enduring spirit of curiosity
+                    that transcends generations. As collectors acquire these charming
+                    digital companions, they not only acquire a piece of art but also
+                    a symbol of respect for the wisdom and experience embodied by our
+                    elder ape friends. Join us in celebrating the legacy of the
+                    Grandpa Apes and the timeless wisdom they impart to us all
+                  </div>
+                  <div
+                    class="mt-8 font-bold capitalize text-zinc-500 max-md:max-w-full"
+                  >
+                    Details
+                  </div>
+                  <div
+                    class="flex gap-2.5 justify-between mt-2.5 max-md:flex-wrap max-md:max-w-full"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc89e5f87ecd67ec98251de90a6fb3df28927ef9b200183be2f854ff7dd91b3a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="self-start w-8 aspect-square"
+                    />
+                    <div class="grow max-md:max-w-full">View on Etherscan</div>
+                  </div>
+                  <div
+                    class="flex gap-2.5 justify-between mt-2.5 max-md:flex-wrap max-md:max-w-full"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc89e5f87ecd67ec98251de90a6fb3df28927ef9b200183be2f854ff7dd91b3a?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="self-start w-8 aspect-square"
+                    />
+                    <div class="grow max-md:max-w-full">View Original</div>
+                  </div>
+                  <div
+                    class="mt-8 capitalize leading-[140%] text-zinc-500 max-md:max-w-full"
+                  >
+                    Tags
+                  </div>
+                  <div
+                    class="flex gap-5 mt-5 text-base leading-6 text-center text-white uppercase whitespace-nowrap max-md:flex-wrap max-md:max-w-full"
+                  >
+                    <div
+                      class="grow justify-center px-8 py-3 rounded-3xl bg-neutral-700 max-md:px-5"
+                    >
+                      Animation
+                    </div>
+                    <div
+                      class="grow justify-center px-8 py-3 rounded-3xl bg-neutral-700 max-md:px-5"
+                    >
+                      illustration
+                    </div>
+                    <div
+                      class="grow justify-center px-8 py-3 rounded-3xl bg-neutral-700 max-md:px-5"
+                    >
+                      moon
+                    </div>
+                    <div
+                      class="grow justify-center px-8 py-3 rounded-3xl bg-neutral-700 max-md:px-5"
+                    >
+                      moon
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col ml-5 w-[31%] max-md:ml-0 max-md:w-full">
+                <div
+                  class="flex flex-col p-8 w-full whitespace-nowrap rounded-3xl bg-neutral-700 max-md:px-5 max-md:mt-10"
+                >
+                  <div
+                    class="flex flex-col justify-end w-full text-white rounded-3xl backdrop-blur-[5px] bg-neutral-700 bg-opacity-50"
+                  >
+                    <div class="text-xs leading-3">Auction ends in:</div>
+                    <div class="flex gap-2.5 mt-2.5">
+                      <div class="flex flex-col flex-1">
+                        <div class="text-4xl font-bold leading-10 capitalize">59</div>
+                        <div class="mt-1.5 text-xs leading-3">Hours</div>
+                      </div>
+                      <div
+                        class="self-start text-3xl font-bold leading-10 capitalize"
+                      >
+                        :
+                      </div>
+                      <div class="flex flex-col flex-1">
+                        <div class="text-4xl font-bold leading-10 capitalize">59</div>
+                        <div class="mt-1.5 text-xs leading-3">Minutes</div>
+                      </div>
+                      <div
+                        class="self-start text-3xl font-bold leading-10 capitalize"
+                      >
+                        :
+                      </div>
+                      <div class="flex flex-col flex-1">
+                        <div class="text-4xl font-bold leading-10 capitalize">59</div>
+                        <div class="mt-1.5 text-xs leading-3">Seconds</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="justify-center items-center px-16 py-5 mt-8 text-base font-semibold leading-6 text-center text-white bg-purple-500 rounded-3xl max-md:px-5"
+                  >
+                    Place Bid
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full bg-zinc-800 max-md:max-w-full">
+          <div
+            class="flex gap-5 justify-between px-12 py-5 w-full text-base font-semibold leading-6 text-center text-white bg-zinc-800 max-md:flex-wrap max-md:px-5 max-md:max-w-full"
+          >
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/feb138d98d91dddbca70381e61e27b7883ac6d76831340548530b7cde0c26df4?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+              class="my-auto max-w-full aspect-[7.69] w-[243px]"
+            />
+            <div
+              class="flex gap-5 justify-between px-5 py-3 max-md:flex-wrap max-md:max-w-full"
+            >
+              <div>Marketplace</div>
+              <div>Rankings</div>
+              <div class="flex-auto">Connect a wallet</div>
+            </div>
+          </div>
+          <div class="w-full bg-zinc-800 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+              <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                <img
+                  loading="lazy"
+                  srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/1f781ae5a690d861cd37337056b531e69749bdf50a422a46ddec98cf61bc9669?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                  class="grow self-stretch w-full aspect-[0.95] max-md:mt-10 max-md:max-w-full"
+                />
+              </div>
+              <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                <div
+                  class="flex flex-col grow px-5 py-12 text-2xl font-semibold leading-8 text-white max-md:mt-10 max-md:max-w-full"
+                >
+                  <div
+                    class="mt-12 text-5xl capitalize leading-[56.1px] max-md:mt-10 max-md:max-w-full max-md:text-4xl"
+                  >
+                    Connect wallet
+                  </div>
+                  <div class="mt-5 leading-9 max-md:max-w-full">
+                    Choose a wallet you want to connect. There are several wallet
+                    providers.
+                  </div>
+                  <div
+                    class="flex gap-5 justify-between px-20 py-4 mt-10 capitalize whitespace-nowrap rounded-3xl border border-solid bg-neutral-700 border-[color:var(--Call-to-Action,#A259FF)] max-md:flex-wrap max-md:px-5 max-md:max-w-full"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e53407e39b5e189df782d41afcf8b7ecb1c221bc90d1e1c7ac10bc4e19a53ab4?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-10 aspect-square"
+                    />
+                    <div class="flex-auto self-start mt-2">Metamask</div>
+                  </div>
+                  <div
+                    class="flex gap-5 justify-between px-20 py-4 mt-5 capitalize rounded-3xl border border-solid bg-neutral-700 border-[color:var(--Call-to-Action,#A259FF)] max-md:flex-wrap max-md:px-5 max-md:max-w-full"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/61142e7829ce2bdc21ae3da34bf30e270518cb746a7036e2eaa92d729b2a1d63?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-10 aspect-square"
+                    />
+                    <div class="flex-auto self-start mt-2">Wallet Connect</div>
+                  </div>
+                  <div
+                    class="flex gap-5 justify-between px-20 py-4 mt-5 capitalize whitespace-nowrap rounded-3xl border border-solid bg-neutral-700 border-[color:var(--Call-to-Action,#A259FF)] max-md:flex-wrap max-md:px-5 max-md:max-w-full"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c72542eedc50db77fb6ad3465c78afe9dd8911e8ff2bcda02009bc18088023af?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                      class="w-10 aspect-square"
+                    />
+                    <div class="flex-auto self-start mt-2">Coinbase</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-center px-16 pt-10 pb-5 w-full bg-neutral-700 max-md:px-5 max-md:max-w-full"
+          >
+            <div class="flex flex-col w-full max-w-[1050px] max-md:max-w-full">
+              <div class="justify-between mx-8 max-md:mr-2.5 max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+                  <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/1f471727e5a5018c1ce0f9a5141a041d8301106c59f9ac2600272b5bd28c5f73?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                        class="self-center aspect-[10] w-[328px]"
+                      />
+                      <div class="mt-8 text-lg leading-6 text-stone-300">
+                        Join our community @ Jiji
+                      </div>
+                      <div class="flex gap-2.5 pr-20 mt-4 max-md:pr-5">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fc3df57feeaef3d697bb2df106643e5e16adad8b82c00717f99f7ab2bd1f1ff?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                          class="w-8 aspect-square"
+                        />
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/dec1f748f4148fc47db2f65f367c622b13c52913478ff879b263b39cdbd3d765?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                          class="w-8 aspect-square"
+                        />
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/f776b8354ffc8eaf1382a9ce8fffb43f77adc05bba1d92927d45ced046345cf7?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                          class="w-8 aspect-square"
+                        />
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/93053e6f217f5eabd18ded8b1598233149395b4153f85c21fcf6a2c7270526b9?apiKey=4acea1c9c63a4c00a86ee5614ac1c6ca&"
+                          class="w-8 aspect-square"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col ml-5 w-[24%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col text-base leading-6 text-stone-300">
+                      <div class="text-2xl font-bold leading-9 text-white capitalize">
+                        Explore
+                      </div>
+                      <div class="mt-6">Marketplace</div>
+                      <div class="mt-5">Rankings</div>
+                      <div class="mt-5">Connect a wallet</div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col ml-5 w-[43%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col grow text-base">
+                      <div class="text-2xl font-bold leading-9 text-white capitalize">
+                        Join our weekly digest
+                      </div>
+                      <div class="mt-6 leading-6 text-stone-300">
+                        Get exclusive promotions & updates straight to your inbox.
+                      </div>
+                      <div
+                        class="flex gap-3 justify-between pl-5 mt-5 whitespace-nowrap bg-white rounded-3xl leading-[140%]"
+                      >
+                        <div class="grow my-auto text-zinc-800">
+                          Enter your email here
+                        </div>
+                        <div
+                          class="grow justify-center px-12 py-5 font-semibold text-center text-white bg-purple-500 rounded-3xl max-md:px-5"
+                        >
+                          Subscribe
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-12 text-lg leading-5 text-stone-300 max-md:mt-10 max-md:max-w-full"
+              >
+                NFT marketplace Jiji But Decentralized
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
